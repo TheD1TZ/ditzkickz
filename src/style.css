@@ -1,0 +1,29 @@
+:root {
+  font-family: 'AktivGrotesk-XBold', 'Oswald-Regular', sans-serif;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+@font-face {
+  font-family: "AktivGrotesk-XBold";
+  src: local("AktivGrotesk-XBold"),
+  url(./assets/fonts/AktivGrotesk-XBold.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Oswald-Regular";
+    src: local("Oswald-Regular"),
+    url(./assets/fonts/Oswald-Regular.ttf) format("truetype");
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
