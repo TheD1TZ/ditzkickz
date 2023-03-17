@@ -1,5 +1,6 @@
 <template>
-  <div class="flex bg-center justify-center py-32" style="background-image: url('/backgrounds/websitebanner.jpg');">
+  <div class="flex bg-center justify-center py-32 bg-fixed"
+       style="background-image: url('/backgrounds/websitebanner.jpg');">
     <h1 class="font-logo text-8xl py-32">DITZKICKZ</h1>
   </div>
 
@@ -27,10 +28,10 @@
   </div>
 <!-- Pictures -->
 <!-- questions -->
-  <div class="flex bg-center justify-center">
-    <div class="grid grid-cols-1">
-      <h1 class="font-main text-6xl py-32">DO YOU HAVE QUESTIONS OR REQUESTS?</h1>
-      <button class="bg-gray-800 py-2 px-3 rounded-xl font-main font-bold text-indigo-500">CONTACT US</button>
+  <div class="flex bg-center justify-center p-24 bg-fixed bg-[url('/backgrounds/background2.jpg')]">
+    <div class="grid grid-cols-1 gap-14 py-24">
+      <h1 class="font-main text-6xl ">DO YOU HAVE QUESTIONS OR REQUESTS?</h1>
+      <MButton :text="'CONTACT ME'" :link="'/contact'"/>
     </div>
   </div>
 </template>
@@ -38,10 +39,11 @@
 <script>
 import ReleaseComponent from "../components/ReleaseComponent.vue";
 import spotifyApi from "../spotify/loadTokens.js";
+import MButton from "../components/MButton.vue";
 
 export default {
   name: "HomePage",
-  components: {ReleaseComponent},
+  components: {MButton, ReleaseComponent},
   data() {
     return {
       tracks: spotifyApi.getArtistTopTracks('02Qk9K9AJwyQWcZ5BrSgd7', 'US')
