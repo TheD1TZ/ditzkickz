@@ -1,0 +1,24 @@
+[
+  {
+    "href": "https://api.spotify.com/v1/albums/3H8SM8HURd8DdgctL6rkQ9",
+    "images": [
+      {
+        "height": 640,
+        "url": "https://i.scdn.co/image/ab67616d0000b2736e30c096cdb67d074d094342",
+        "width": 640
+      },
+    ],
+    "name": "KICK SOME A## (DitzKickz Remix)"
+    },
+  {
+    "href": "https://api.spotify.com/v1/albums/3gfdhdgu6wyfsgdhdfghj",
+    "images": [
+      {
+        "height": 640,
+        "url": "https://i.scdn.co/image/ab67616d0000b2736e30c096cdb67d074d0974435",
+        "width": 640
+      },
+    ],
+    "name": "EET MN BALLEN"
+  }
+]

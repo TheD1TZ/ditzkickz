@@ -5,6 +5,7 @@ const id = '02Qk9K9AJwyQWcZ5BrSgd7';
 const getTracks = () => {
     return spotifyApi.getArtistAlbums(id, 'US')
         .then(function(data) {
+            console.log('Albums', JSON.stringify(data.body.items))
             return data.body.items;
         }, function(err) {
             console.error(err);

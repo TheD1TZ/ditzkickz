@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     fontFamily: {
         logo: ["AktivGrotesk-XBold"],
-        main: ["Oswald-Regular"],
+        main: ["Oswald-Regular", "Oswald-Bold", "Oswald-Medium"],
     },
     extend: {},
   },
