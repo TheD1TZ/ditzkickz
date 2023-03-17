@@ -1,4 +1,4 @@
-<template style="background-image: url('src/assets/images/backgrounds/background2.jpg')">
+<template style="background-image: url('public/backgrounds/background2.jpg')">
 
   <div class="grid-cols-4 gap-4 p-5">
     <button type="submit" v-on:click="Tracks()"> GetTracks</button>
