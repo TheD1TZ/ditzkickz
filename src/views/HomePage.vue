@@ -28,7 +28,7 @@
   </div>
 <!-- Pictures -->
 <!-- questions -->
-  <div class="flex bg-center justify-center p-24 bg-fixed bg-[url('/backgrounds/background2.jpg')]">
+  <div class="flex bg-center justify-center p-24 bg-fixed bg-[url('/backgrounds/background1.jpg')]">
     <div class="grid grid-cols-1 gap-14 py-24">
       <h1 class="font-main text-6xl ">DO YOU HAVE QUESTIONS OR REQUESTS?</h1>
       <MButton :text="'CONTACT ME'" :link="'/contact'"/>
