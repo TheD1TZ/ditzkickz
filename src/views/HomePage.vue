@@ -18,9 +18,9 @@
 
       <!--      shows a list of all the albums from the json-->
       <div class="grid grid-cols-4 gap-4 py-9">
-          <div v-for="album in items">
-            <ReleaseComponent :title="album.name" :streamlink="album.external_urls.spotify" :artwork="album.images[0].url"/>
-          </div>
+        <div v-for="album in items">
+          <ReleaseComponent :title="album.name" :artists="getArtistNames(album.artists)" :streamlink="album.external_urls.spotify" :artwork="album.images[0].url"/>
+        </div>
       </div>
     </div>
   </div>
@@ -50,9 +50,9 @@ export default {
   beforeMount() {
     console.log('Tokens have been loaded!');
     loadTokens();
-    spotifyApi.getArtistAlbums('02Qk9K9AJwyQWcZ5BrSgd7', { limit: 4 })
+    spotifyApi.getArtistAlbums('02Qk9K9AJwyQWcZ5BrSgd7')
         .then(function (data) {
-          console.log('Albums information', data.body.items);
+          // console.log('Albums information', JSON.stringify(data.body.items));
           localStorage.setItem('tracks', JSON.stringify(data.body.items));
         }, function (err) {
           console.error(err);
@@ -65,6 +65,12 @@ export default {
     // If data exists, parse it and bind to data property
     if (data) {
       this.items = JSON.parse(data);
+    }
+  },
+  methods: {
+    getArtistNames(tracks) {
+      let names = tracks.map(track => track.name);
+      return names.join(", ");
     }
   }
 }

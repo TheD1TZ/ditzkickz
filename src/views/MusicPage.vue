@@ -17,7 +17,7 @@
     </div>
   </div>
 
-  <div class="bg-fixed bg-center bg-fixed bg-[url('/backgrounds/background2.jpg')]">
+  <div class="bg-fixed bg-center pb-12 bg-fixed bg-[url('/backgrounds/background2.jpg')]">
     <div class="grid grid-cols-2 gap-24 p-24 px-44 text-center">
       <div class="grid grid-cols-1 gap-6">
         <div class="py-2">
