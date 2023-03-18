@@ -1,6 +1,6 @@
 <template>
   <div class="flex justify-center">
-    <a :href="link" class="flex w-1/4 py-3 text-2xl rounded-xl font-main bg-gray-600 hover:bg-gray-800 ease-in-out duration-300 justify-center shadow-xl text-white">
+    <a :href="link" class="flex w-1/4 py-3 text-2xl rounded-xl font-main bg-darkbluegray hover:bg-lightbluegray ease-in-out duration-300 justify-center shadow-xl text-white">
       <h1>{{ text }}</h1>
     </a>
   </div>

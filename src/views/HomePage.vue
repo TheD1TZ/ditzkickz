@@ -16,20 +16,18 @@
     <div class="grid grid-cols-1 text-center">
       <h1 class="font-main text-6xl py-20">LATEST RELEASES</h1>
 
+      <!--      shows a list of all the albums from the json-->
       <div class="grid grid-cols-4 gap-4 py-9">
-        <div v-for="track in tracks" :key="tracks">
-          track.name
-          <div v-for="t in track">
-            <ReleaseComponent :Title="t.name" />
+          <div v-for="album in items">
+            <ReleaseComponent :title="album.name" :streamlink="album.external_urls.spotify" :artwork="album.images[0].url"/>
           </div>
-        </div>
       </div>
     </div>
   </div>
 <!-- Pictures -->
 <!-- questions -->
   <div class="flex bg-center justify-center p-24 bg-fixed bg-[url('/backgrounds/background1.jpg')]">
-    <div class="grid grid-cols-1 gap-14 py-24">
+    <div class="grid grid-cols-1 gap-14 py-20">
       <h1 class="font-main text-6xl ">DO YOU HAVE QUESTIONS OR REQUESTS?</h1>
       <MButton :text="'CONTACT ME'" :link="'/contact'"/>
     </div>
@@ -38,7 +36,7 @@
 
 <script>
 import ReleaseComponent from "../components/ReleaseComponent.vue";
-import spotifyApi from "../spotify/loadTokens.js";
+import spotifyApi, {loadTokens} from "../spotify/loadTokens.js";
 import MButton from "../components/MButton.vue";
 
 export default {
@@ -46,14 +44,28 @@ export default {
   components: {MButton, ReleaseComponent},
   data() {
     return {
-      tracks: spotifyApi.getArtistTopTracks('02Qk9K9AJwyQWcZ5BrSgd7', 'US')
-        .then(function(data) {
-          console.log('Artist top tracks', data.body.tracks)
-          return JSON.stringify(data.body.tracks);
-        }, function(err) {
-          return err;
-        }),
-    }
+      items: []
+    };
   },
+  beforeMount() {
+    console.log('Tokens have been loaded!');
+    loadTokens();
+    spotifyApi.getArtistAlbums('02Qk9K9AJwyQWcZ5BrSgd7', { limit: 4 })
+        .then(function (data) {
+          console.log('Albums information', data.body.items);
+          localStorage.setItem('tracks', JSON.stringify(data.body.items));
+        }, function (err) {
+          console.error(err);
+        })
+  },
+  mounted() {
+    // Retrieve data from local storage
+    const data = localStorage.getItem("tracks");
+
+    // If data exists, parse it and bind to data property
+    if (data) {
+      this.items = JSON.parse(data);
+    }
+  }
 }
 </script>

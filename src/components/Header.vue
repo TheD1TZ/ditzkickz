@@ -1,8 +1,8 @@
 <template>
-  <header class="sticky top-0 bg-gray-800 flex items-center justify-between px-8 py-5 shadow-lg">
+  <header class="sticky top-0 bg-darkbluegray flex items-center justify-between px-8 py-5 shadow-lg">
     <!-- logo -->
     <h1 class="w-3/12">
-      <a href="">
+      <a href="/">
         <h2 class="font-logo text-4xl">{LOGO}</h2>
       </a>
     </h1>
@@ -10,20 +10,20 @@
     <!-- navigation -->
     <nav class="nav text-lg">
       <ul class="flex items-center font-main text-1xl">
-        <li class="p-4 hover:text-blue-300 duration-200 cursor-pointer">
+        <li class="p-4 hover:text-Llightbluegray duration-200 cursor-pointer">
           <a href="/">HOME</a>
         </li>
-        <li class="p-4 hover:text-blue-300 duration-300 cursor-pointer">
+        <li class="p-4 hover:text-Llightbluegray duration-300 cursor-pointer">
           <a href="/about">ABOUT</a>
         </li>
-        <li class="p-4 hover:text-blue-300 duration-300 cursor-pointer">
-          <a href="bookings">BOOKINGS</a>
+        <li class="p-4 hover:text-Llightbluegray duration-300 cursor-pointer">
+          <a href="/bookings">BOOKINGS</a>
         </li>
-        <li class="p-4 hover:text-blue-300 duration-300 cursor-pointer">
-          <a href="music">MUSIC</a>
+        <li class="p-4 hover:text-Llightbluegray duration-300 cursor-pointer">
+          <a href="/music">MUSIC</a>
         </li>
-        <li class="p-4 hover:text-blue-300 duration-300 cursor-pointer">
-          <a href="contact">CONTACT</a>
+        <li class="p-4 hover:text-Llightbluegray duration-300 cursor-pointer">
+          <a href="/contact">CONTACT</a>
         </li>
       </ul>
     </nav>

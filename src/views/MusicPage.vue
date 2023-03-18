@@ -1,6 +1,6 @@
 <template>
 
-  <div class="flex bg-center bg-neutral-700 justify-center p-24">
+  <div class="flex bg-center bg-Ddarkbluegray justify-center p-24 bg-fixed bg-center bg-opacity-10 bg-fixed">
     <div class="grid grid-cols-1 text-center">
       <h1 class="font-main text-6xl p-2">LATEST RELEASES</h1>
       <div class="grid grid-cols-1 font-main text-xl">
@@ -9,19 +9,10 @@
       </div>
 
 
-      <div class="grid grid-cols-4 gap-4 py-9">
-<!--      <div v-for="album in tracks">-->
-<!--        <ReleaseComponent :Artwork="album.images[0].url"/>-->
-        <!--      </div>-->
-
-        <div>
-          <ul>
-            <li v-for="track in tracks" :key="track.href">
-              <img :alt="track.name" :src="track.images[0].url"/>
-              <span>{{ track.name }}</span>
-            </li>
-          </ul>
-        </div>
+      <div class="grid grid-cols-4 gap-6 py-9">
+          <div v-for="album in items">
+            <ReleaseComponent :title="album.name" :artists="getArtistNames(album.artists)" :streamlink="album.external_urls.spotify" :artwork="album.images[0].url"/>
+          </div>
       </div>
     </div>
   </div>
@@ -44,9 +35,13 @@
           <h1 class="font-main text-6xl p-2">DITZKICKZ RADIO</h1>
           <h1 class="font-main text-6xl p-2">PLAYLIST</h1>
         </div>
-        <iframe class="rounded-2xl"
-                height="450"
-                loading="lazy" src="https://open.spotify.com/embed/playlist/37i9dQZF1E4ysOxpNn92jH?utm_source=generator&theme=0" width="100%"></iframe>
+        <iframe allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                allowfullscreen=""
+                class="rounded-2xl"
+                frameBorder="0" height="450" loading="lazy"
+                src="https://open.spotify.com/embed/playlist/37i9dQZF1E4ysOxpNn92jH?utm_source=generator&theme=0"
+                style="border-radius:12px"
+                width="100%"></iframe>
       </div>
     </div>
   </div>
@@ -54,29 +49,43 @@
 </template>
 
 <script>
-import {getTracks} from "../spotify/spotifyAPI.js";
 import ReleaseComponent from "../components/ReleaseComponent.vue";
 import spotifyApi from "../spotify/loadTokens.js";
+import {loadTokens} from "../spotify/loadTokens.js";
 
 export default {
   name: "MusicPage",
   components: {ReleaseComponent},
   data() {
     return {
-      tracks: spotifyApi.getArtistAlbums('02Qk9K9AJwyQWcZ5BrSgd7', 'US')
-          .then(function(data) {
-            console.log('Artist tracks', JSON.stringify(data.body.items))
-            return JSON.stringify(data.body.items);
-          }, function(err) {
-            return err;
-          }),
+      items: []
+    };
+  },
+  beforeMount() {
+    console.log('Tokens have been loaded!');
+    loadTokens();
+    spotifyApi.getArtistAlbums('02Qk9K9AJwyQWcZ5BrSgd7')
+        .then(function (data) {
+          // console.log('Albums information', JSON.stringify(data.body.items));
+          localStorage.setItem('tracks', JSON.stringify(data.body.items));
+        }, function (err) {
+          console.error(err);
+        })
+  },
+  mounted() {
+    // Retrieve data from local storage
+    const data = localStorage.getItem("tracks");
+
+    // If data exists, parse it and bind to data property
+    if (data) {
+      this.items = JSON.parse(data);
     }
   },
   methods: {
-    Tracks() {
-      this.tracks = getTracks();
-      console.log(this.tracks)
+    getArtistNames(tracks) {
+      let names = tracks.map(track => track.name);
+      return names.join(", ");
     }
-  },
+  }
 }
 </script>

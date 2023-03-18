@@ -11,22 +11,25 @@ const spotifyApi = new SpotifyWebApi({
     clientSecret: clientSecret,
 });
 
-fetch(authEndpoint, {
-    method: 'POST',
-    headers: {
-        'Authorization': `Basic ${encodedAuthString}`,
-        'Content-Type': 'application/x-www-form-urlencoded'
-    },
-    body: data
-})
-    .then(response => response.json())
-    .then(data => {
-        // Use the access token
-        // console.log(`Access token: ${data.access_token}`);
-        spotifyApi.setAccessToken(`${data.access_token}`);
+export const loadTokens = async () => {
+    fetch(authEndpoint, {
+        method: 'POST',
+        headers: {
+            'Authorization': `Basic ${encodedAuthString}`,
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: data
     })
-    .catch(error => {
-        console.error(`Error requesting access token: ${error}`);
-    });
+        .then(response => response.json())
+        .then(data => {
+            // Use the access token
+            // console.log(`Access token: ${data.access_token}`);
+            spotifyApi.setAccessToken(`${data.access_token}`);
+        })
+        .catch(error => {
+            console.error(`Error requesting access token: ${error}`);
+        });
+}
+
 
 export default spotifyApi;

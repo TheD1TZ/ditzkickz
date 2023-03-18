@@ -9,7 +9,16 @@ module.exports = {
         logo: ["AktivGrotesk-XBold"],
         main: ["Oswald-Regular", "Oswald-Bold", "Oswald-Medium"],
     },
-    extend: {},
+    extend: {
+        colors: {
+          Ddarkbluegray: "#171f22",
+          darkbluegray: "#212d31",
+          Llightbluegray: "#8bbdd3",
+          lightbluegray: "#638694",
+          Dlightgray: "#616161",
+          Ddarkgray: "#484848",
+        }
+    },
   },
   plugins: [],
 }
