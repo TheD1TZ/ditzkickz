@@ -27,11 +27,15 @@ export const loadSpotify = async () => {
             console.log('Tokens loaded successfully!')
             spotifyApi.setAccessToken(`${data.access_token}`);
         })
+        .then(() => {
+            getTracks();
+            console.log('Tracks loaded successfully!')
+            }
+        )
         .catch(error => {
             console.error(`Error requesting access token: ${error}`);
         });
 
-    await spotifyApi.getAccessToken() === null ? setTimeout(loadSpotify, 10000) : getTracks();
 }
 
 export const getTracks = () => {
