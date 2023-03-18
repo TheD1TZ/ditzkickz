@@ -1,6 +1,5 @@
 import SpotifyWebApi from 'spotify-web-api-node';
-import {loadEnv} from "vite";
-const clientSecret = loadEnv('production','clientsecret');
+const clientSecret = '6fcf0022eff948ea9a854432dd4ce018';
 const clientId = '8df6a5ad7cc443dd9bccdde2770fd860';
 const authString = `${clientId}:${clientSecret}`;
 const encodedAuthString = btoa(authString);
