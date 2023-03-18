@@ -49,7 +49,6 @@ export default {
   },
   mounted() {
     // Retrieve data from local storage
-    getTracks()
     const data = localStorage.getItem("albums:home");
 
     // If data exists, parse it and bind to data property

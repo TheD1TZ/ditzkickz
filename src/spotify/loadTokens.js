@@ -30,12 +30,15 @@ export const loadSpotify = async () => {
         .catch(error => {
             console.error(`Error requesting access token: ${error}`);
         });
+
+    if (spotifyApi.getAccessToken() !== null) {
+        getTracks();
+    }
 }
 
 export const getTracks = () => {
     spotifyApi.getArtistAlbums('02Qk9K9AJwyQWcZ5BrSgd7', { limit: 4 })
         .then(function (data) {
-            // console.log('Albums information', JSON.stringify(data.body.items));
             localStorage.setItem('albums:home', JSON.stringify(data.body.items));
         }, function (err) {
             console.error(err);
@@ -43,7 +46,6 @@ export const getTracks = () => {
 
     spotifyApi.getArtistAlbums('02Qk9K9AJwyQWcZ5BrSgd7')
         .then(function (data) {
-            // console.log('Albums information', JSON.stringify(data.body.items));
             localStorage.setItem('albums:music', JSON.stringify(data.body.items));
         }, function (err) {
             console.error(err);
