@@ -51,7 +51,6 @@
 <script>
 import ReleaseComponent from "../components/ReleaseComponent.vue";
 import spotifyApi from "../spotify/loadTokens.js";
-import {loadTokens} from "../spotify/loadTokens.js";
 
 export default {
   name: "MusicPage",
@@ -62,8 +61,6 @@ export default {
     };
   },
   beforeMount() {
-    console.log('Tokens have been loaded!');
-    loadTokens();
     spotifyApi.getArtistAlbums('02Qk9K9AJwyQWcZ5BrSgd7')
         .then(function (data) {
           // console.log('Albums information', JSON.stringify(data.body.items));

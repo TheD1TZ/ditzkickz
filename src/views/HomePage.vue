@@ -36,7 +36,7 @@
 
 <script>
 import ReleaseComponent from "../components/ReleaseComponent.vue";
-import spotifyApi, {loadTokens} from "../spotify/loadTokens.js";
+import spotifyApi from "../spotify/loadTokens.js";
 import MButton from "../components/MButton.vue";
 
 export default {
@@ -48,8 +48,6 @@ export default {
     };
   },
   beforeMount() {
-    console.log('Tokens have been loaded!');
-    loadTokens();
     spotifyApi.getArtistAlbums('02Qk9K9AJwyQWcZ5BrSgd7')
         .then(function (data) {
           // console.log('Albums information', JSON.stringify(data.body.items));

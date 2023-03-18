@@ -1,5 +1,6 @@
 import SpotifyWebApi from 'spotify-web-api-node';
-const clientSecret = '6fcf0022eff948ea9a854432dd4ce018';
+import {loadEnv} from "vite";
+const clientSecret = loadEnv('production','clientsecret');
 const clientId = '8df6a5ad7cc443dd9bccdde2770fd860';
 const authString = `${clientId}:${clientSecret}`;
 const encodedAuthString = btoa(authString);
@@ -24,6 +25,7 @@ export const loadTokens = async () => {
         .then(data => {
             // Use the access token
             // console.log(`Access token: ${data.access_token}`);
+            console.log('Tokens loaded successfully!')
             spotifyApi.setAccessToken(`${data.access_token}`);
         })
         .catch(error => {
