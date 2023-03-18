@@ -50,7 +50,7 @@
 
 <script>
 import ReleaseComponent from "../components/ReleaseComponent.vue";
-import spotifyApi from "../spotify/loadTokens.js";
+import spotifyApi, {getTracks} from "../spotify/loadTokens.js";
 
 export default {
   name: "MusicPage",
@@ -62,6 +62,7 @@ export default {
   },
   mounted() {
     // Retrieve data from local storage
+    getTracks()
     const data = localStorage.getItem("albums:music");
 
     // If data exists, parse it and bind to data property
