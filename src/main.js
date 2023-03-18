@@ -7,8 +7,9 @@ import {loadTokens} from "./spotify/loadTokens.js";
 
 createApp(App)
     .use(router)
-    .use(loadTokens)
     .mount('#app')
+
+loadTokens().then(r => console.log(r));
 
 
 
