@@ -47,18 +47,9 @@ export default {
       items: []
     };
   },
-  beforeMount() {
-    spotifyApi.getArtistAlbums('02Qk9K9AJwyQWcZ5BrSgd7')
-        .then(function (data) {
-          // console.log('Albums information', JSON.stringify(data.body.items));
-          localStorage.setItem('tracks', JSON.stringify(data.body.items));
-        }, function (err) {
-          console.error(err);
-        })
-  },
   mounted() {
     // Retrieve data from local storage
-    const data = localStorage.getItem("tracks");
+    const data = localStorage.getItem("albums:home");
 
     // If data exists, parse it and bind to data property
     if (data) {

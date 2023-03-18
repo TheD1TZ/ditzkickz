@@ -11,7 +11,7 @@ const spotifyApi = new SpotifyWebApi({
     clientSecret: clientSecret,
 });
 
-export const loadTokens = async () => {
+export const loadSpotify = async () => {
     fetch(authEndpoint, {
         method: 'POST',
         headers: {
@@ -30,6 +30,22 @@ export const loadTokens = async () => {
         .catch(error => {
             console.error(`Error requesting access token: ${error}`);
         });
+
+    spotifyApi.getArtistAlbums('02Qk9K9AJwyQWcZ5BrSgd7', { limit: 4 })
+        .then(function (data) {
+            // console.log('Albums information', JSON.stringify(data.body.items));
+            localStorage.setItem('albums:home', JSON.stringify(data.body.items));
+        }, function (err) {
+            console.error(err);
+        })
+
+    spotifyApi.getArtistAlbums('02Qk9K9AJwyQWcZ5BrSgd7')
+        .then(function (data) {
+            // console.log('Albums information', JSON.stringify(data.body.items));
+            localStorage.setItem('albums:music', JSON.stringify(data.body.items));
+        }, function (err) {
+            console.error(err);
+        })
 }
 
 

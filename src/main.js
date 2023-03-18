@@ -2,12 +2,12 @@ import { createApp } from 'vue'
 import './style.css'
 import App from './App.vue'
 import router from './router'
-import {loadTokens} from "./spotify/loadTokens.js";
+import {loadSpotify} from "./spotify/loadTokens.js";
 
 
 createApp(App)
     .use(router)
-    .use(loadTokens)
+    .use(loadSpotify)
     .mount('#app')
 
 
