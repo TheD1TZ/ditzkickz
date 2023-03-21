@@ -21,4 +21,7 @@ module.exports = {
     },
   },
   plugins: [],
+  safelist: [{
+    pattern: /(bg|text|border)-(Ddarkbluegray|darkbluegray|Llightbluegray|lightbluegray|Dlightgray|Ddarkgray)/
+}]
 }
