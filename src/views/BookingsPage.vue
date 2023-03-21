@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import ShowComponent from "../components/ReleaseComponent.vue";
+import ShowComponent from "../components/ShowComponent.vue";
 
 export default {
   name: "BookingsPage",
