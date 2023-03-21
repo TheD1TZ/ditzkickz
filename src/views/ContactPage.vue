@@ -6,8 +6,8 @@
       <!--Booking list-->
       <div class="w-2/3">
         <h1 class="text-6xl py-5">CONTACT ME</h1>
-        <a class="text-3xl whitespace-normal">If you have any questions or enquiries, feel free to contact us.
-          We can be reached directly by mail or by filling in the contact form below.</a>
+        <a class="text-3xl whitespace-normal">If you have any questions or enquiries, feel free to contact me.
+          I can be reached directly by mail or by filling in the contact form below.</a>
       </div>
 
       <div class="pt-8">

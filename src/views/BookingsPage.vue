@@ -6,7 +6,7 @@
       <!--Booking list-->
       <div class="w-2/3">
         <h1 class="text-6xl py-5">UPCOMING BOOKINGS</h1>
-        <a class="text-3xl whitespace-normal">Take a look at our agenda and join the madness at one of our gigs.
+        <a class="text-3xl whitespace-normal">Take a look at the agenda and join the madness at one of my gigs.
            Hope to see you soon!</a>
       </div>
 
