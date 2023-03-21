@@ -17,7 +17,7 @@
               :date="show.date"
               :country="show.country"
               :description="show.description"
-            ></ShowComponent>
+            />
           </div>
         </div>
       </div>
@@ -35,8 +35,11 @@
 </template>
 
 <script>
+import ShowComponent from "../components/ReleaseComponent.vue";
+
 export default {
   name: "BookingsPage",
+  components: {BookingsPage}
   data() {
     return {
       shows: [
