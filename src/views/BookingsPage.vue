@@ -39,7 +39,7 @@ import ShowComponent from "../components/ReleaseComponent.vue";
 
 export default {
   name: "BookingsPage",
-  components: {BookingsPage},
+  components: {ShowComponent},
   data() {
     return {
       shows: [
