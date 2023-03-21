@@ -10,20 +10,20 @@
     <!-- navigation -->
     <nav class="nav text-lg">
       <ul class="flex items-center font-main text-1xl">
-        <li class="p-4 hover:text-Llightbluegray duration-200 cursor-pointer">
-          <a href="/">HOME</a>
+        <li v-on:click="this.$router.push({ path: '/' })" class="p-4 hover:text-Llightbluegray duration-200 cursor-pointer">
+          <a>HOME</a>
         </li>
-        <li class="p-4 hover:text-Llightbluegray duration-300 cursor-pointer">
-          <a href="/about">ABOUT</a>
+        <li v-on:click="this.$router.push({ path: '/about' })" class="p-4 hover:text-Llightbluegray duration-300 cursor-pointer">
+          <a>ABOUT</a>
         </li>
-        <li class="p-4 hover:text-Llightbluegray duration-300 cursor-pointer">
-          <a href="/bookings">BOOKINGS</a>
+        <li v-on:click="this.$router.push({ path: '/bookings' })" class="p-4 hover:text-Llightbluegray duration-300 cursor-pointer">
+          <a>BOOKINGS</a>
         </li>
-        <li class="p-4 hover:text-Llightbluegray duration-300 cursor-pointer">
-          <a href="/music">MUSIC</a>
+        <li v-on:click="this.$router.push({ path: '/music' })" class="p-4 hover:text-Llightbluegray duration-300 cursor-pointer">
+          <a>MUSIC</a>
         </li>
-        <li class="p-4 hover:text-Llightbluegray duration-300 cursor-pointer">
-          <a href="/contact">CONTACT</a>
+        <li v-on:click="this.$router.push({ path: '/contact' })" class="p-4 hover:text-Llightbluegray duration-300 cursor-pointer">
+          <a>CONTACT</a>
         </li>
       </ul>
     </nav>
