@@ -1,5 +1,5 @@
 <template>
-  <div class="flex bg-center justify-center py-32 bg-fixed"
+  <div class="flex bg-center justify-center py-32 bg-fixed text-white"
        style="background-image: url('/backgrounds/websitebanner.jpg');">
     <h1 class="font-logo text-8xl py-32">DITZKICKZ</h1>
   </div>

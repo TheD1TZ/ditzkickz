@@ -1,6 +1,6 @@
 <template>
 
-  <div class="flex content-center justify-center p-24 py-44 px-56">
+  <div class="flex content-center justify-center p-24 py-44 px-56 text-white">
 
     <div>
       <!--Booking list-->

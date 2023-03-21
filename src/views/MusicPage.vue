@@ -1,6 +1,6 @@
 <template>
 
-  <div class="flex bg-center bg-Ddarkbluegray justify-center p-24 bg-fixed bg-center bg-opacity-10 bg-fixed">
+  <div class="flex bg-center bg-Ddarkbluegray justify-center p-24 bg-fixed bg-center bg-opacity-10 bg-fixed text-white">
     <div class="grid grid-cols-1 text-center">
       <h1 class="font-main text-6xl p-2">LATEST RELEASES</h1>
       <div class="grid grid-cols-1 font-main text-xl">

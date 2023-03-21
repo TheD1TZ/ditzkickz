@@ -1,5 +1,5 @@
 <template>
-  <header class="sticky top-0 bg-darkbluegray flex items-center justify-between px-8 py-5 shadow-lg">
+  <header class="sticky top-0 bg-darkbluegray flex items-center justify-between px-8 py-5 shadow-lg text-white">
     <!-- logo -->
     <h1 class="w-3/12">
       <a href="/">

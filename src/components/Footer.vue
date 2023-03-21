@@ -1,5 +1,5 @@
 <template>
-  <div class="flex fixed bottom-0 justify-center w-full bg-Ddarkbluegray shadow-lg py-8">
+  <div class="flex fixed bottom-0 justify-center w-full text-white bg-Ddarkbluegray shadow-lg py-8">
     <a class="font-main">© 2023 DITZKICKZ</a>
     <!-- buttons --->
     <div class="w-3/12 flex justify-end">
